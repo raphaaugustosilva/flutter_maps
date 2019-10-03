@@ -29,6 +29,9 @@ dependencies:
   http:
   intl:
   intl_translation:
+  google_maps_flutter:
+  permission_handler: ^3.2.2
+
 
 dev_dependencies:
   flutter_test:
