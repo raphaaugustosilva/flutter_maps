@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_maps/views/mapaSimplesView.dart';
 import 'package:flutter_maps/views/principalView.dart';
 
 class NavegacaoHelper {
   static const rotaRoot = "/";
   static const rotaPrincipal = "/principal";
+  static const rotaMapaSimples = "/mapasimples";
 
   static RouteFactory rotas() {
     return (settings) {
@@ -18,6 +20,10 @@ class NavegacaoHelper {
         case rotaPrincipal:
           //File arquivoPDF = parametros != null ? parametros["arquivoPDF"] : null;
           viewEncontrada = PrincipalView();
+          break;
+
+        case rotaMapaSimples:
+          viewEncontrada = MapaSimplesView();
           break;
 
         default:
