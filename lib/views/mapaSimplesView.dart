@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_maps/views/_baseView.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-final LatLngBounds sydneyBounds = LatLngBounds(
-  southwest: const LatLng(-34.022631, 150.620685),
-  northeast: const LatLng(-33.571835, 151.325952),
+final LatLngBounds sageBounds = LatLngBounds(
+  //SAGE => LatLng(-22.759162, -47.325246),
+  southwest: const LatLng(-22.759572, -47.326497),
+  northeast: const LatLng(-22.758412, -47.325357),
 );
 
 class MapaSimplesView extends BaseView {
@@ -28,7 +29,7 @@ class _MapaSimplesBodyState extends State<_MapaSimplesBody> {
   _MapaSimplesBodyState();
 
   static final CameraPosition _kInitialPosition = const CameraPosition(
-    target: LatLng(-33.852, 151.211),
+    target: LatLng(-22.724316, -47.300313),
     zoom: 11.0,
   );
 
@@ -89,7 +90,7 @@ class _MapaSimplesBodyState extends State<_MapaSimplesBody> {
       ),
       onPressed: () {
         setState(() {
-          _cameraTargetBounds = _cameraTargetBounds.bounds == null ? CameraTargetBounds(sydneyBounds) : CameraTargetBounds.unbounded;
+          _cameraTargetBounds = _cameraTargetBounds.bounds == null ? CameraTargetBounds(sageBounds) : CameraTargetBounds.unbounded;
         });
       },
     );
@@ -287,10 +288,13 @@ class _MapaSimplesBodyState extends State<_MapaSimplesBody> {
         ),
       );
     }
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: columnChildren,
+    return Scaffold(
+      appBar: AppBar(title: Text("Mapa Simples")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: columnChildren,
+      ),
     );
   }
 

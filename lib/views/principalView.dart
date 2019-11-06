@@ -20,7 +20,7 @@ class _PrincipalViewState extends State<PrincipalView> {
         children: <Widget>[
           RaisedButton(
             child: Text("Mapa Simples"),
-            onPressed: () => Navigator.of(context).pushNamed(NavegacaoHelper.rotaPrincipal),
+            onPressed: () => Navigator.of(context).pushNamed(NavegacaoHelper.rotaMapaSimples),
           )
         ],
       ),
